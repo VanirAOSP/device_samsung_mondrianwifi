@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /*
-** Copyright 2009, The Android Open Source Project
+** Copyright 2011, The CyanogenMod Project
 **
 ** Licensed under the Apache License, Version 2.0 (the "License");
 ** you may not use this file except in compliance with the License.
@@ -17,14 +17,9 @@
 */
 -->
 
-<!-- These resources are around just to allow their values to be customized
-     for different hardware and product builds. -->
 <resources>
-
-    <!-- Whether we're using the tablet-optimized recents interface (we use this
-     value at runtime for some things) -->
-    <bool name="config_recents_interface_for_tablets">true</bool>
-
-    <!-- Whether rotation lock shows up in quick settings or not -->
-    <bool name="quick_settings_show_rotation_lock">true</bool>
+   <!-- Fraction of the display height to use to determine whether or not the
+     current keyboard position is still in a transient state and therefore we
+     should defer displaying preview views such -->
+   <integer name="config_custom_keyboard_coordinate_fraction">5</integer>
 </resources>
