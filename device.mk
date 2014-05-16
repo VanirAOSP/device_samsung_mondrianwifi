@@ -103,7 +103,6 @@ PRODUCT_PACKAGES += \
     init.crda.sh \
     init.qcom.rc \
     init.qcom.usb.rc \
-    init.qcom.wifi.sh \
     init.ril.rc \
     init.target.rc \
     ueventd.qcom.rc
@@ -138,9 +137,9 @@ PRODUCT_PACKAGES += \
     wcnss_service
 
 PRODUCT_COPY_FILES += \
-    kernel/samsung/mondrianwifi/drivers/net/wireless/prima/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
-    kernel/samsung/mondrianwifi/drivers/net/wireless/prima/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
-    $(LOCAL_PATH)/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
+    $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
 # libxml2 is needed for camera
 PRODUCT_PACKAGES += libxml2
@@ -180,7 +179,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ril.subscription.types=NV,RUIM \
     ro.ril.hsxpa=1 \
     ro.ril.gprsclass=10 \
-    ro.use_data_netmgrd=true \
+    ro.use_data_netmgrd=false \
     persist.data.netmgrd.qos.enable=true \
     persist.radio.add_power_save=1 \
     persist.radio.apm_sim_not_pwdn=1 \
