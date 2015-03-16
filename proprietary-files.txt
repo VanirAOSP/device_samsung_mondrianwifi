@@ -60,19 +60,20 @@ vendor/lib/egl/eglsubAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
 vendor/lib/egl/libGLESv2_adreno.so
-vendor/lib/egl/libplayback_adreno.so
 vendor/lib/egl/libq3dtools_adreno.so
 vendor/lib/libadreno_utils.so
+vendor/lib/libbccQTI.so
 vendor/lib/libC2D2.so
 vendor/lib/libc2d30-a3xx.so
 vendor/lib/libCB.so
 vendor/lib/libgsl.so
-vendor/lib/libOpenCL.so
 vendor/lib/libllvm-qcom.so
-vendor/lib/libsc-a3xx.so
-vendor/lib/libRSDriver_adreno.so
-vendor/lib/librs_adreno.so
+vendor/lib/libOpenCL.so
 vendor/lib/librs_adreno_sha1.so
+vendor/lib/librs_adreno.so
+vendor/lib/libRSDriver_adreno.so
+vendor/lib/libsc-a3xx.so
+vendor/lib/libscale.so
 etc/firmware/a330_pfp.fw
 etc/firmware/a330_pm4.fw
 
@@ -225,20 +226,18 @@ vendor/lib/libqc-opt.so
 
 # DRM
 bin/qseecomd
-lib/drm/libfwdlockengine.so
-lib/liboemcrypto.so
+framework/com.google.widevine.software.drm.jar
+lib/libdrmdecrypt.so
 vendor/lib/drm/libdrmwvmplugin.so
-vendor/lib/libdrmdecrypt.so
+vendor/lib/libdrmdiag.so
 vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
 vendor/lib/libQSEEComAPI.so
 vendor/lib/librpmb.so
 vendor/lib/libssd.so
-vendor/lib/libwvdrm_L1.so
+vendor/lib/libwvdrm_L3.so
 vendor/lib/libwvm.so
-vendor/lib/libWVphoneAPI.so
-vendor/lib/libWVStreamControlAPI_L1.so
-vendor/lib/mediadrm/libdrmclearkeyplugin.so
+vendor/lib/libWVStreamControlAPI_L3.so
 vendor/lib/mediadrm/libwvdrmengine.so
 
 # IPC router security
