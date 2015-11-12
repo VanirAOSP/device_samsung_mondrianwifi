@@ -25,7 +25,7 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8974
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/mondrianwifi/mkbootimg.mk
 BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3
+BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02900000 --tags_offset 0x02700000
@@ -41,6 +41,7 @@ BOARD_USES_SEPERATED_AUDIO_INPUT := true
 AUDIO_FEATURE_DISABLED_MULTI_VOICE_SESSIONS := true
 AUDIO_FEATURE_DISABLED_FM := true
 AUDIO_FEATURE_DISABLED_ANC_HEADSET := true
+USE_CUSTOM_AUDIO_POLICY := 1
 
 # Bluetooth
 BLUETOOTH_HCI_USE_MCT := true
@@ -61,11 +62,6 @@ TARGET_GPS_HAL_PATH := device/samsung/mondrianwifi/gps
 
 # Hardware
 BOARD_HARDWARE_CLASS += device/samsung/mondrianwifi/cmhw
-
-# Init
-TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := device/samsung/mondrianwifi/init/init_mondrianwifi.c
-TARGET_UNIFIED_DEVICE := true
 
 # Graphics
 TARGET_HAVE_NEW_GRALLOC := true
