@@ -103,6 +103,18 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.qcom.rc
 
+# Ssl
+PRODUCT_PACKAGES += \
+    libboringssl-compat
+
+# Stlport
+PRODUCT_PACKAGES += \
+    libstlport
+
+# rmt_storage
+PRODUCT_PACKAGES += \
+    libshim_rmt_storage
+
 # Thermal
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine-8974.conf:system/etc/thermal-engine-8974.conf \
