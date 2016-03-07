@@ -187,10 +187,6 @@ on post-fs-data
     mkdir /data/misc/audio 0770 audio audio
     restorecon_recursive /data/misc/audio
 
-    # Mounting of persist is moved to 'on emmc-fs' and 'on fs' sections
-    # We chown/chmod /persist again so because mount is run as root + defaults
-    chown system system /persist
-    chmod 0771 /persist
     chmod 0664 /sys/devices/platform/msm_sdcc.1/polling
     chmod 0664 /sys/devices/platform/msm_sdcc.2/polling
     chmod 0664 /sys/devices/platform/msm_sdcc.3/polling
@@ -486,6 +482,14 @@ service dhcpcd_bnep4 /system/bin/dhcpcd -BKLG
     disabled
     oneshot
 
+service dhcpcd_bt-pan /system/bin/dhcpcd -BKLG
+    disabled
+    oneshot
+
+service iprenew_bt-pan /system/bin/dhcpcd -n
+    disabled
+    oneshot
+
 #for WiFi MFG(TestMode)
 service mfgloader /system/bin/mfgloader
     class main
@@ -499,15 +503,6 @@ service wlandutservice /system/bin/wlandutservice
     disabled
     oneshot
 
-service macloader /system/bin/macloader
-    class main
-    oneshot
-
-on property:init.svc.macloader=stopped
-    chown system root /data/.cid.info
-    chmod 0664 /data/.cid.info
-    chown system root /data/.rev
-    chmod 0664 /data/.rev
 # end of wifi
 
 service gpsone_daemon /system/bin/gpsone_daemon
